@@ -70,7 +70,8 @@ holding them all resident.
 ## 3. Evaluation
 
 Metrics are implemented in [`evaluate.py`](../src/mmi/evaluate.py) and run against
-a small hand-labelled reference ([`data/reference/reference.json`](../data/reference/reference.json)):
+a small **bootstrap** reference ([`data/reference/reference.json`](../data/reference/reference.json))
+— not an independent hand-labelled reference; see the caveat below the results table:
 
 - **ASR — Word Error Rate** (jiwer) on normalised text, with S/D/I breakdown.
   When the reference is a snippet (has `speaker_segments`), WER is scoped to
@@ -95,8 +96,8 @@ full run — see [`outputs/result.json`](../outputs/result.json) /
 <colgroup><col style="width:30%"><col style="width:14%"><col style="width:56%"></colgroup>
 <thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>ASR WER (first 60 s vs bootstrap reference)</td><td><strong>6.67 %</strong></td><td>8 insertions / 0 subs / 0 dels</td></tr>
-<tr><td>Speaker attribution accuracy (first 60 s)</td><td><strong>100 %</strong></td><td>2 speakers in window; label map <code>SPEAKER_01&rarr;chair, SPEAKER_03&rarr;andrew</code>; 6 speakers globally</td></tr>
+<tr><td>ASR WER (first 60 s vs bootstrap reference)</td><td><strong>6.67 %</strong></td><td>8 insertions / 0 subs / 0 dels. <strong>Harness validation, not an accuracy claim</strong> &mdash; see caveat below.</td></tr>
+<tr><td>Speaker attribution accuracy (first 60 s)</td><td><strong>100 %</strong></td><td>2 speakers in window; label map <code>SPEAKER_01&rarr;chair, SPEAKER_03&rarr;andrew</code>; 6 speakers globally. <strong>Harness validation, not an accuracy claim</strong> &mdash; see caveat below.</td></tr>
 <tr><td>OCR keyword recall</td><td><strong>100 %</strong> (1/1)</td><td>Only meaningful term is &quot;zoom&quot;; see below</td></tr>
 <tr><td>Scenes with OCR text</td><td><strong>15 / 16</strong></td><td>&nbsp;</td></tr>
 <tr><td>Distinct diarized speakers</td><td><strong>6</strong></td><td>Plausible for a small council meeting</td></tr>
@@ -106,11 +107,17 @@ full run — see [`outputs/result.json`](../outputs/result.json) /
 </tbody>
 </table>
 
-The reference labels in `data/reference/reference.json` are a **bootstrap**
-transcript (a lightly-cleaned version of the pipeline's own first-minute
-output), which makes the WER an optimistic anchor rather than an unbiased
-quality measurement. It still exercises the harness and, more importantly, the
-speaker-attribution and OCR metrics are unaffected by that bias.
+**Caveat: no independent manual labels exist for this clip.** The reference
+transcript *and* speaker segments in `data/reference/reference.json` are a
+**bootstrap** — both derived from the pipeline's own first-minute output
+rather than an independent human listen (see the file's own `_comment`). That
+makes **both** the ASR WER and the speaker-attribution accuracy circular: they
+measure whether the harness computes the metric correctly, not whether the
+transcript or diarization is actually right. The one exception is **OCR
+keyword recall** — the single expected keyword ("zoom") was noted by eye from
+the video, independent of the pipeline's own OCR output, so that number is a
+genuine (if trivial) check. See "Evaluation methodology — future work" below
+for how we'd replace the bootstrap with a real, non-circular reference.
 
 **Failure analysis (where it breaks and why).**
 
@@ -141,6 +148,29 @@ speaker-attribution and OCR metrics are unaffected by that bias.
 - *LLM grounding* → the schema forces evidence, but the model can still cite a
   plausible-but-wrong timestamp; the grounded-fraction metric flags *whether*
   evidence exists, not that it's correct — a known gap.
+
+**Evaluation methodology — future work (no manual labels currently exist).**
+We have no independently human-labelled reference for this clip, so ASR WER
+and speaker-attribution accuracy above should be read as harness validation,
+not accuracy claims (see the caveat above). Three concrete ways to get a real,
+non-circular signal, roughly in increasing cost:
+
+- *Silver-standard reference model.* Run `whisper-large-v3` (or the OpenAI
+  Whisper API) once on the same clip and score `small`'s output against it
+  instead of against itself. Not truly independent (same model family), but a
+  standard, fully-automatic proxy for "does the cheap model degrade relative
+  to the expensive one" — no human time required.
+- *A few minutes of real human listening.* The current reference only spans
+  the first 60 s. Listening to that one window ourselves (or running it
+  through an unrelated service, e.g. YouTube auto-captions) and correcting it
+  by ear turns the bootstrap into a genuine, independent reference at minimal
+  cost — no need to hand-label the full 26 minutes.
+- *Multimodal cross-validation for diarization.* This is a Zoom recording,
+  and Zoom highlights the active speaker in its UI. The vision stage already
+  OCRs keyframes; detecting that highlight box would give an automatically-
+  extracted, independent "who was speaking when" signal from the *visual*
+  channel to score diarization against, instead of comparing the audio
+  pipeline against a label bootstrapped from the same audio pipeline.
 
 ## 4. Production thinking
 

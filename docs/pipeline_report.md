@@ -47,15 +47,24 @@ timestamped evidence.
 ## 3. Evaluation summary
 
 Metrics are computed by [`evaluate.py`](../src/mmi/evaluate.py) against a small
-hand-labelled reference. Full numbers and methodology are in
-[`report.md`](report.md); headline results on the provided clip:
+**bootstrap** reference (not independently hand-labelled — see caveat below
+the table). Full numbers and methodology are in [`report.md`](report.md);
+headline results on the provided clip:
 
 | Stage | Metric | Result |
 |-------|--------|-------:|
-| ASR | Word Error Rate (first 60 s window) | 6.67 % |
-| Diarization | Speaker attribution accuracy (first 60 s) | 100 % (2 speakers in window; 6 globally) |
+| ASR | Word Error Rate (first 60 s window) | 6.67 %<sup>&dagger;</sup> |
+| Diarization | Speaker attribution accuracy (first 60 s) | 100 % (2 speakers in window; 6 globally)<sup>&dagger;</sup> |
 | Vision/OCR | Keyword recall across keyframes | 100 % (1/1 term); 15/16 scenes yielded text |
 | Intelligence | Grounded-evidence fraction | 100 % (9/9 items: 7 topics, 1 action item, 1 decision) |
+
+<sup>&dagger;</sup> **Harness validation, not an accuracy claim** — the
+reference transcript and speaker labels were bootstrapped from the pipeline's
+own output (no independent manual listen exists for this clip), so these two
+numbers show the eval code computes the metric correctly, not that the
+transcript/diarization is actually right. OCR recall and the LLM
+grounded-fraction are not affected by this. See "Evaluation methodology —
+future work" in [`report.md`](report.md) for how we'd get a real reference.
 
 **Failure analysis:**
 
