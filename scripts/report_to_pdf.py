@@ -11,13 +11,14 @@ Defaults: docs/report.md -> docs/report.pdf
 
 from __future__ import annotations
 
-import sys
+import argparse
 from pathlib import Path
 
 import markdown
 from xhtml2pdf import pisa
 
 ROOT = Path(__file__).resolve().parents[1]
+_MD_EXTENSIONS = ["extra", "sane_lists", "toc"]
 
 _CSS = """
 <style>
@@ -42,27 +43,52 @@ def _link_callback(uri: str, rel: str, base: Path) -> str:
     """Resolve relative image paths (used by xhtml2pdf for <img src=...>)."""
     if uri.startswith(("http://", "https://", "data:")):
         return uri
-    path = (base / uri).resolve()
-    return str(path)
+    return str((base / uri).resolve())
 
 
-def main() -> int:
-    argv = sys.argv[1:]
-    src = ROOT / (argv[0] if len(argv) > 0 else "docs/report.md")
-    dest = ROOT / (argv[1] if len(argv) > 1 else "docs/report.pdf")
+def render_html(md_text: str) -> str:
+    """Convert report markdown into a standalone, styled HTML document."""
+    body_html = markdown.markdown(md_text, extensions=_MD_EXTENSIONS)
+    return f"<html><head>{_CSS}</head><body>{body_html}</body></html>"
 
-    md_text = src.read_text(encoding="utf-8")
-    body_html = markdown.markdown(
-        md_text, extensions=["extra", "sane_lists", "toc"]
-    )
-    html = f"<html><head>{_CSS}</head><body>{body_html}</body></html>"
 
+def render_pdf(html: str, dest: Path, image_base_dir: Path) -> None:
+    """Render an HTML document to ``dest`` via xhtml2pdf.
+
+    ``image_base_dir`` is where relative <img src=...> paths are resolved
+    from -- the source markdown file's own directory, not the CWD.
+    """
+    dest.parent.mkdir(parents=True, exist_ok=True)
     with open(dest, "wb") as fh:
         result = pisa.CreatePDF(
-            html, dest=fh, link_callback=lambda uri, rel: _link_callback(uri, rel, src.parent)
+            html,
+            dest=fh,
+            link_callback=lambda uri, rel: _link_callback(uri, rel, image_base_dir),
         )
     if result.err:
         raise RuntimeError(f"PDF generation failed with {result.err} error(s).")
+
+
+def build_arg_parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument(
+        "src", nargs="?", default="docs/report.md",
+        help="Source markdown file (relative to repo root). Default: docs/report.md",
+    )
+    p.add_argument(
+        "dest", nargs="?", default=None,
+        help="Destination PDF path (relative to repo root). Default: <src> with a .pdf suffix.",
+    )
+    return p
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_arg_parser().parse_args(argv)
+    src = ROOT / args.src
+    dest = ROOT / args.dest if args.dest else src.with_suffix(".pdf")
+
+    html = render_html(src.read_text(encoding="utf-8"))
+    render_pdf(html, dest, image_base_dir=src.parent)
 
     print(f"Wrote {dest}")
     return 0
