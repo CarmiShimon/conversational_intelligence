@@ -8,11 +8,9 @@ Each stage reads a typed object and emits a typed object, so any component can b
 replaced (a different ASR, a hosted OCR, another LLM) without touching its
 neighbours — the same shape a production speech/AI stack takes.
 
-```
-video ─▶ ingest ─▶ [A] speech ─┐
-                                ├─▶ [C] fusion ─▶ [C] intelligence ─▶ result.json
-        └──────▶ [B] vision ────┘
-```
+![Pipeline architecture](diagram.png)
+
+(Mermaid source: [`docs/diagram.mmd`](diagram.mmd).)
 
 **Data contracts (the important part).** The brief explicitly asks us to design
 the contract between stages, so this is where most of the design effort went:
@@ -35,6 +33,7 @@ toggled (`--skip-llm`, `--skip-vision`, …) for cheap partial runs. Secrets are
 read only from the environment.
 
 **What we rejected.**
+
 - *WhisperX vs. rolling our own faster-whisper + pyannote glue.* We kept
   WhisperX because its VAD-batched inference and word-level alignment give
   materially better speaker attribution at segment boundaries, and it already
@@ -56,15 +55,17 @@ read only from the environment.
 | Diarization | pyannote 3.1 | State-of-the-art open diarizer, integrates with WhisperX | Needs a HF token; sensitive to overlapping speech |
 | Scene detection | PySceneDetect content detector | Cheap, robust to slide/scene cuts | Threshold tuning; gradual fades can be missed |
 | OCR | EasyOCR (GPU) | Simple install, decent on slide text, GPU-accelerated | Weaker on dense/stylised text than PaddleOCR (swappable via config) |
-| LLM | OpenAI `gpt-4o-mini` | Strong structured-output support, low cost/latency | Hosted dependency; `gpt-4o` available for higher fidelity |
+| LLM | OpenAI `gpt-4o` (vision-capable) | Native multimodal input (reads keyframes directly), strong structured-output support | Hosted dependency, higher cost/latency than `gpt-4o-mini` (configurable) |
 
-**Cost/latency/accuracy stance.** We deliberately default to the *cheap, fast*
-end of each axis (small Whisper, mini LLM, one keyframe/scene) because the brief
-values judgment and integration over raw accuracy, and because the reference
-machine is a 4 GB laptop GPU. Every knob is in [`config.yaml`](../config.yaml) to
-scale accuracy up when hardware allows. GPU memory is the binding constraint, so
-the speech stage loads/uses/frees each model (ASR → align → diarize) sequentially
-rather than holding them all resident.
+**Cost/latency/accuracy stance.** We default to the *cheap, fast* end of the
+ASR/vision axes (small Whisper, one keyframe/scene) because the reference
+machine is a 4 GB laptop GPU, but spend more on the LLM (`gpt-4o` rather than
+`gpt-4o-mini`) because grounded reasoning over fused text+image evidence is
+where quality matters most and tokens are comparatively cheap next to a bad
+summary. Every knob is in [`config.yaml`](../config.yaml) to retune the
+balance. GPU memory is the binding constraint on Part A, so the speech stage
+loads/uses/frees each model (ASR → align → diarize) sequentially rather than
+holding them all resident.
 
 ## 3. Evaluation
 
@@ -86,16 +87,24 @@ a small hand-labelled reference ([`data/reference/reference.json`](../data/refer
   (share of items carrying evidence) and an optional LLM-as-judge (`--judge`).
 
 **Results on the provided clip** (26 min council meeting, `--language en`,
-`whisper-small` on a 4 GB T1200, LLM stage skipped due to OpenAI quota):
+`whisper-small` on a 4 GB T1200, LLM stage: `gpt-4o` with 16 keyframe images,
+full run — see [`outputs/result.json`](../outputs/result.json) /
+[`outputs/eval.json`](../outputs/eval.json)):
 
-| Metric | Value | Notes |
-|--------|------:|-------|
-| ASR WER (first 60 s vs bootstrap reference) | **6.67 %** | 8 insertions / 0 subs / 0 dels |
-| Speaker attribution accuracy (first 60 s)   | **100 %** | 2 speakers in window; label map `SPEAKER_01→chair, SPEAKER_03→andrew`; 6 speakers globally |
-| OCR keyword recall                          | **100 %** (1/1) | Only meaningful term is "zoom"; see below |
-| Scenes with OCR text                        | **15 / 16** | |
-| Distinct diarized speakers                  | **6** | Plausible for a small council meeting |
-| Detected language                           | **en** | Auto-detect chose `mi` (Maori) on the first 30 s intro; overridden by `--language en`. Robust auto-detect (majority vote at 25/50/75 %) is implemented in `speech.py` for future runs. |
+<table>
+<colgroup><col style="width:30%"><col style="width:14%"><col style="width:56%"></colgroup>
+<thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>ASR WER (first 60 s vs bootstrap reference)</td><td><strong>6.67 %</strong></td><td>8 insertions / 0 subs / 0 dels</td></tr>
+<tr><td>Speaker attribution accuracy (first 60 s)</td><td><strong>100 %</strong></td><td>2 speakers in window; label map <code>SPEAKER_01&rarr;chair, SPEAKER_03&rarr;andrew</code>; 6 speakers globally</td></tr>
+<tr><td>OCR keyword recall</td><td><strong>100 %</strong> (1/1)</td><td>Only meaningful term is &quot;zoom&quot;; see below</td></tr>
+<tr><td>Scenes with OCR text</td><td><strong>15 / 16</strong></td><td>&nbsp;</td></tr>
+<tr><td>Distinct diarized speakers</td><td><strong>6</strong></td><td>Plausible for a small council meeting</td></tr>
+<tr><td>Detected language</td><td><strong>en</strong></td><td>Auto-detect chose <code>mi</code> (Maori) on the first 30 s intro; overridden by <code>--language en</code>. Robust auto-detect (majority vote at 25/50/75 %) is implemented in <code>speech.py</code> for future runs.</td></tr>
+<tr><td>LLM output (topics / action items / decisions)</td><td><strong>7 / 1 / 1</strong></td><td>All grounded (see next row)</td></tr>
+<tr><td>LLM grounded-evidence fraction</td><td><strong>100 %</strong> (9/9)</td><td>Every topic/action-item/decision cites a timestamp + speaker or scene; see the known gap noted below</td></tr>
+</tbody>
+</table>
 
 The reference labels in `data/reference/reference.json` are a **bootstrap**
 transcript (a lightly-cleaned version of the pipeline's own first-minute
@@ -104,6 +113,7 @@ quality measurement. It still exercises the harness and, more importantly, the
 speaker-attribution and OCR metrics are unaffected by that bias.
 
 **Failure analysis (where it breaks and why).**
+
 - *Language ID on noisy intros* → Whisper mis-detected English as Maori on the
   first 30 s (which contains roll-call cross-talk and short utterances),
   producing a garbage transcript of "maitha, maitha, maitha…" for the first
@@ -118,9 +128,12 @@ speaker-attribution and OCR metrics are unaffected by that bias.
 - *Diarization initially failed* due to a `speechbrain 1.1 + pyannote 3.3.2`
   lazy-import bug (`speechbrain.integrations.k2_fsa` cannot be resolved).
   Pinning `speechbrain==1.0.2` fixed it and produced 6 plausible speakers.
-- *LLM stage failed* with `429 insufficient_quota`. The pipeline now catches
-  that, writes a valid `result.json` with `intelligence=null` and
-  `metadata.llm_error` populated, and re-runs will re-try (idempotent).
+- *LLM stage is a single external dependency* — during development it failed
+  once with `429 insufficient_quota`. The pipeline catches that, writes a
+  valid `result.json` with `intelligence=null` and `metadata.llm_error`
+  populated instead of losing the (expensive) transcript/visual work, and a
+  re-run retries it (idempotent). The committed `result.json` is a clean run
+  where the LLM stage succeeded.
 - *Windows console encoding* — EasyOCR / gdown progress bars use box-drawing
   characters that cp1255 can't encode; forced UTF-8 for stdout in the CLI.
 - *Diarization on overlap / short backchannels* → still a general risk; the

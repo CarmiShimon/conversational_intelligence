@@ -14,7 +14,7 @@ downstream LLM can cheaply consume.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import List, Tuple
 
 from .config import VisionConfig
 from .schemas import OcrLine, SceneSegment, VisualContext

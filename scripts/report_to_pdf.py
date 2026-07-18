@@ -28,8 +28,9 @@ _CSS = """
   h3 { font-size: 10.5pt; margin-top: 8pt; }
   code, pre { font-family: Courier, monospace; font-size: 8pt; }
   pre { background: #f4f4f4; padding: 6px; }
-  table { border-collapse: collapse; width: 100%; margin: 6px 0; }
-  th, td { border: 1px solid #999; padding: 3px 5px; font-size: 8.5pt; text-align: left; }
+  table { border-collapse: collapse; width: 100%; margin: 6px 0; table-layout: fixed; }
+  th, td { border: 1px solid #999; padding: 3px 5px; font-size: 8.5pt; text-align: left;
+           word-wrap: break-word; overflow-wrap: break-word; }
   th { background: #eee; }
   a { color: #1a5276; }
   img { max-width: 100%; }

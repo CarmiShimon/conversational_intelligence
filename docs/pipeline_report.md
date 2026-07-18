@@ -55,12 +55,13 @@ hand-labelled reference. Full numbers and methodology are in
 | ASR | Word Error Rate (first 60 s window) | 6.67 % |
 | Diarization | Speaker attribution accuracy (first 60 s) | 100 % (2 speakers in window; 6 globally) |
 | Vision/OCR | Keyword recall across keyframes | 100 % (1/1 term); 15/16 scenes yielded text |
-| Intelligence | Grounded-evidence fraction | see `outputs/eval.json` |
+| Intelligence | Grounded-evidence fraction | 100 % (9/9 items: 7 topics, 1 action item, 1 decision) |
 
 **Failure analysis:**
+
 - *Language ID on noisy intros* — Whisper's majority-vote language detector
-  mis-identified the (English) recording as Māori (`mi`) on all three sampled
-  windows, likely triggered by genuine Māori place names ("Waikato", "Waipa
+  mis-identified the (English) recording as Maori (`mi`) on all three sampled
+  windows, likely triggered by genuine Maori place names ("Waikato", "Waipa
   District"). The transcript stage stores `language="mi"`, but the LLM stage
   self-corrects to `"en"` using full-meeting context. A `--language en` CLI
   override is available but not forced by default.
@@ -72,22 +73,27 @@ hand-labelled reference. Full numbers and methodology are in
 - *LLM stage is a single external dependency* — an OpenAI quota/network error
   is caught and the run still emits a valid partial `result.json`
   (`intelligence=null`, `metadata.llm_error` populated) rather than failing
-  the whole pipeline; the (expensive) transcript/visual artifacts are not lost.
+  the whole pipeline; the (expensive) transcript/visual artifacts are not
+  lost. The committed `result.json` is a clean run where the LLM call
+  succeeded (`intelligence` populated, `llm_error: null`).
 - *Diarization on overlapping speech / short backchannels* remains the largest
   general risk to speaker-accuracy on longer, less orderly meetings.
 
-**Latency & resource notes** (this run: 26 min clip, 4 GB laptop GPU, `small`
-Whisper, `gpt-4o` with keyframe images):
+**Latency & resource notes** (this run: 26 min / 1560 s clip, 4 GB T1200 laptop
+GPU, `small` Whisper, `gpt-4o` with keyframe images; ASR/alignment/diarization/
+LLM timings from a `--language en` run, vision timing from a separate
+deterministic scene-detect + OCR pass on the same clip/machine — vision output
+doesn't depend on transcript language, so the two are directly comparable):
 
 | Stage | Wall-clock | Notes |
 |-------|-----------:|-------|
 | Ingest (ffmpeg) | ~2 s | Cached WAV extraction |
-| Speech — ASR | ~{ASR_SEC} | faster-whisper `small`, float16, batch 8 |
-| Speech — alignment | ~{ALIGN_SEC} | wav2vec2, skipped if no model for detected language |
-| Speech — diarization | ~{DIAR_SEC} | pyannote 3.1, CPU/GPU depending on availability |
-| Vision — scene detect + OCR | ~{VISION_SEC} | PySceneDetect + EasyOCR, {N_SCENES} scenes |
-| Intelligence — LLM call | ~{LLM_SEC} | `gpt-4o`, {N_KEYFRAMES} keyframe images attached |
-| **Total** | **~{TOTAL_SEC}** | End-to-end `python -m mmi.run --force` |
+| Speech — ASR | ~161 s | faster-whisper `small`, float16, batch 8 |
+| Speech — alignment | ~38 s | wav2vec2, skipped if no model for detected language |
+| Speech — diarization | ~117 s | pyannote 3.1, CPU/GPU depending on availability |
+| Vision — scene detect + OCR | ~63 s | PySceneDetect + EasyOCR, 16 scenes |
+| Intelligence — LLM call | ~24 s | `gpt-4o`, 16 keyframe images attached, map-reduce (2 chunks) |
+| **Total** | **~407 s (~6.8 min)** | End-to-end for a 26 min / 1560 s meeting |
 
 GPU memory is the binding constraint on the reference machine (4 GB), so the
 speech stage loads/uses/frees each model (ASR → align → diarize) sequentially

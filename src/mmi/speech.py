@@ -27,12 +27,14 @@ from .utils import get_logger, stage_timer
 _LOG = get_logger("mmi.speech")
 
 
-def _free(*objs) -> None:
-    for o in objs:
-        try:
-            del o
-        except Exception:
-            pass
+def _release_gpu_memory() -> None:
+    """Run GC and clear the CUDA cache.
+
+    Callers must ``del`` their own reference to the model/tensor *before*
+    calling this: a helper that receives the object as an argument only
+    holds a local binding, so ``del`` inside the helper does not drop the
+    caller's reference and the memory is never actually freed.
+    """
     gc.collect()
     try:
         import torch  # type: ignore
@@ -74,7 +76,8 @@ def transcribe(audio_path: Path, cfg: SpeechConfig, hf_token: Optional[str]) -> 
         )
         language = result["language"]
         _LOG.info("Using language: %s", language)
-        _free(asr_model)
+        del asr_model
+        _release_gpu_memory()
 
     # --- Word-level alignment --------------------------------------------- #
     with stage_timer("speech.align"):
@@ -86,7 +89,8 @@ def transcribe(audio_path: Path, cfg: SpeechConfig, hf_token: Optional[str]) -> 
                 result["segments"], align_model, metadata, audio, device,
                 return_char_alignments=False,
             )
-            _free(align_model)
+            del align_model
+            _release_gpu_memory()
         except Exception as exc:
             _LOG.warning("Alignment unavailable for '%s': %s", language, exc)
 
@@ -98,13 +102,15 @@ def transcribe(audio_path: Path, cfg: SpeechConfig, hf_token: Optional[str]) -> 
                 diarize_segments = _diarize(whisperx, audio, cfg, device, hf_token)
                 result = whisperx.assign_word_speakers(diarize_segments, result)
                 diarized = True
-                _free(diarize_segments)
+                del diarize_segments
+                _release_gpu_memory()
             except Exception as exc:
                 _LOG.warning("Diarization failed: %s", exc)
     else:
         _LOG.warning("No HuggingFace token; skipping diarization (single speaker).")
 
-    _free(audio)
+    del audio
+    _release_gpu_memory()
     return _to_transcript(result["segments"], language, diarized)
 
 

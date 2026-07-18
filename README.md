@@ -16,7 +16,7 @@ video ─▶ ingest ─▶ [A] speech ─┐
 | A. Speech | [`speech.py`](src/mmi/speech.py) | Segment → ASR (auto language ID) → word alignment → diarization → merge | WhisperX (faster-whisper) + pyannote |
 | B. Vision | [`vision.py`](src/mmi/vision.py) | Scene/slide-change detection → representative keyframe → OCR | PySceneDetect + EasyOCR |
 | C. Fusion | [`fusion.py`](src/mmi/fusion.py) | Merge A + B onto one timeline | — |
-| C. Intelligence | [`intelligence.py`](src/mmi/intelligence.py) | Structured summary / topics / action items / decisions, grounded in evidence | OpenAI (gpt-4o-mini) |
+| C. Intelligence | [`intelligence.py`](src/mmi/intelligence.py) | Structured summary / topics / action items / decisions, grounded in evidence | OpenAI (gpt-4o, vision-capable) |
 | D. Evaluation | [`evaluate.py`](src/mmi/evaluate.py) | WER, speaker accuracy, OCR recall, LLM rubric | jiwer + optional LLM judge |
 
 ## Requirements

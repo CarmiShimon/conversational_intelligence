@@ -29,6 +29,7 @@ from .utils import (
     get_logger,
     load_dotenv_if_available,
     read_json,
+    reset_stage_timings,
     stage_timer,
     write_json,
 )
@@ -45,6 +46,7 @@ def run_pipeline(
     force: bool = False,
 ) -> PipelineOutput:
     cfg.ensure_dirs()
+    reset_stage_timings()
     cache = Path(cfg.paths.cache_dir)
 
     # --- Stage 0: ingest --------------------------------------------------- #

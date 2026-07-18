@@ -36,6 +36,21 @@
     "total_scenes": 16
   },
   "llm": {
-    "note": "LLM stage was skipped"
+    "rubric": [
+      "Summary is faithful to the transcript (no invented facts).",
+      "Key topics reflect what was actually discussed.",
+      "Action items are real commitments, with owners where stated.",
+      "Each item is grounded with a plausible timestamp / speaker / scene.",
+      "Output is well-structured and free of hallucinated entities."
+    ],
+    "counts": {
+      "topics": 7,
+      "action_items": 1,
+      "decisions": 1
+    },
+    "grounded_items": {
+      "fraction": 1.0,
+      "total_items": 9
+    }
   }
 }

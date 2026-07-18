@@ -31,6 +31,16 @@ _LOG = get_logger("mmi.utils")
 STAGE_TIMINGS: dict[str, float] = {}
 
 
+def reset_stage_timings() -> None:
+    """Clear STAGE_TIMINGS. Call at the start of each pipeline run.
+
+    Without this, timings accumulate across every run_pipeline() call made
+    in the same process (e.g. batch scripts, tests, notebooks), so a later
+    run's reported stage_seconds would silently include earlier runs' time.
+    """
+    STAGE_TIMINGS.clear()
+
+
 @contextmanager
 def stage_timer(name: str) -> Iterator[None]:
     """Log wall-clock time for a pipeline stage and record it in STAGE_TIMINGS."""

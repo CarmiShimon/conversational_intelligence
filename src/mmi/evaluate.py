@@ -21,7 +21,7 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 from .schemas import PipelineOutput
 from .utils import (
@@ -47,7 +47,7 @@ def _normalize(text: str) -> str:
 def eval_wer(
     output: PipelineOutput,
     ref_text: str,
-    ref_window: Optional[tuple] = None,
+    ref_window: Optional[Tuple[float, float]] = None,
 ) -> Dict:
     import jiwer  # type: ignore
 
@@ -194,7 +194,7 @@ def _llm_judge(output: PipelineOutput, model: str, api_key: str) -> Dict:
     prompt = (
         "Score the following meeting-intelligence JSON from 1-5 on each rubric "
         "item. Return JSON {scores:[{criterion,score,reason}], overall:int}.\n\n"
-        f"RUBRIC:\n- " + "\n- ".join(_RUBRIC) + "\n\nOUTPUT JSON:\n"
+        "RUBRIC:\n- " + "\n- ".join(_RUBRIC) + "\n\nOUTPUT JSON:\n"
         f"{output.intelligence.model_dump_json(indent=2)}"
     )
     resp = client.chat.completions.create(

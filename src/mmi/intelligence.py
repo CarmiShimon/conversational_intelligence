@@ -136,7 +136,9 @@ def _select_keyframes(
         return []
     scenes = [s for s in visual.scenes if s.keyframe_path]
     cap = cfg.max_keyframe_images
-    if len(scenes) <= cap or cap <= 0:
+    if cap <= 0:
+        return []
+    if len(scenes) <= cap:
         return scenes
     step = len(scenes) / cap
     return [scenes[int(i * step)] for i in range(cap)]

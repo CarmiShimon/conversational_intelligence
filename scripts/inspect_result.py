@@ -1,6 +1,7 @@
 import json
 
-d = json.load(open("outputs/result.json", encoding="utf-8"))
+with open("outputs/result.json", encoding="utf-8") as fh:
+    d = json.load(fh)
 m, t, v = d["metadata"], d["transcript"], d["visual"]
 print("language:", t["language"], "| duration_s:", round(m["duration_sec"]))
 print("segments:", len(t["segments"]), "| scenes:", len(v["scenes"]))
