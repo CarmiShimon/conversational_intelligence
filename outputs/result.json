@@ -1,0 +1,1219 @@
+{
+  "metadata": {
+    "source": "data\\input\\clip.mp4",
+    "duration_sec": 1560.033348,
+    "language": "mi",
+    "generated_at": "2026-07-18T11:10:50.168010+00:00",
+    "models": {
+      "asr": "small",
+      "ocr": "easyocr",
+      "llm": "gpt-4o"
+    },
+    "llm_error": null,
+    "stage_seconds": {
+      "ingest": 1.67,
+      "speech.load_audio": 2.06,
+      "speech.asr": 195.53,
+      "speech.align": 0.0,
+      "speech.diarize": 111.04,
+      "vision.scene_detect": 57.07,
+      "vision.keyframe_ocr": 6.01,
+      "intelligence.llm": 16.94
+    }
+  },
+  "transcript": {
+    "language": "mi",
+    "segments": [
+      {
+        "start": 0.031,
+        "end": 29.444,
+        "text": "pili, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha, maitha,",
+        "speaker": "SPEAKER_01",
+        "words": []
+      },
+      {
+        "start": 29.798,
+        "end": 54.149,
+        "text": "in the motion as well. If someone would like to move please. Thanks to Lou, thanks to Susan, all in favour? Contrary no, it's carried. Disclosure of members' interests, do we have any today? No, while we move on to item four, late items. Any late items?",
+        "speaker": "SPEAKER_01",
+        "words": []
+      },
+      {
+        "start": 57.372,
+        "end": 85.148,
+        "text": "No late items, so confirmation of order of meeting. No changes, Ken? No, I don't see any need for change. We do have a number of guests joining us at the meeting today, but they're well aware of the time, so yes, I'm hoping they'll be here at the required time. Happy to move, Andrew. Graeme. Thanks, Graeme. A seconder. Thanks, Susan. I think that was.",
+        "speaker": "SPEAKER_00",
+        "words": []
+      },
+      {
+        "start": 85.418,
+        "end": 115.287,
+        "text": "All in favour, please say aye. Okay, item six, which is confirmation of the minutes from 18 February. I'll take those as being read. Anything raised from those minutes? Andrew Graham speaking. My diary is showing me that I was at that meeting, but my name is not recorded there.",
+        "speaker": "SPEAKER_01",
+        "words": []
+      },
+      {
+        "start": 116.165,
+        "end": 145.038,
+        "text": "I was going to bring that up too, so I think there's some mistakes. Thanks, Bruce. OK, so I'm sure we can have that remedy, Sam. Yes, we'll make the changes. Thank you. OK, so with that change, could I have a mover for the minutes to be received as a trim correct record, please? Thank you, Marcus. Seconder? I'll second it. Thanks, Bruce. All in favour, please say aye. Aye.",
+        "speaker": "SPEAKER_01",
+        "words": []
+      },
+      {
+        "start": 145.612,
+        "end": 171.008,
+        "text": "Thank you. Item 7, Jason. Has Jason joined us? He has. I see him. Hi, Jason. How are you doing? Good, thank you. Great. The floor is yours. Okay. Sam, I don't think we had issues with trying to get the presentation. Is that right? Oh, no. Sam is sharing. Brilliant.",
+        "speaker": "SPEAKER_01",
+        "words": []
+      },
+      {
+        "start": 177.623,
+        "end": 207.307,
+        "text": "Perfect. Thanks, Sam. Good morning or good afternoon. Sorry, everyone. Thanks for allowing me time just to give you a quick update on where we are as a sector for tourism and particularly for Waipa District. So a report has obviously been provided to you and prepared, which was our last six months' performance at the end of 31st December 2019. As you would have seen, Waipa District Council was going through significant growth, probably one of the fastest growing",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 207.307,
+        "end": 232.366,
+        "text": "regions for us with regards to tourism impact. You are experiencing double-digit growth pretty much through visitor expenditure and also commercial accommodation. But we are here today to discuss just obviously a bit of a change in the dynamic given COVID and the impact for tourism particularly as a sector. Go to the next slide, Sam.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 235.049,
+        "end": 262.657,
+        "text": "Perfect. So just first a couple of slides obviously just covering off some data. We're now receiving international and national data on a weekly basis from the government and also from the airlines. So no surprise obviously since COVID lockdown and international travel restrictions were put in place. International visitor arrivals into New Zealand has been have been dropping at a very sharp rate. We still do have airline connectivity which I will go through",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 263.011,
+        "end": 276.713,
+        "text": "We are still maintaining what we call a baseline service for connections across the world, mainly for repatriation flights, but also for cargo and service across the country as well.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 279.329,
+        "end": 301.857,
+        "text": "So, weekly card transactions, again, no surprise, obviously, overall, our visitor expenditure is down significantly. But when you do look on to the left top five, obviously, food, liquor and pharmacies, we are still seeing some cumulative and some, obviously, weekly growth in expenditure compared to all our other visitor type expenditure and transactions as well. Thanks, Sam.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 308.827,
+        "end": 337.126,
+        "text": "So, the impact for us as a sector, again, look, I mean, all of this has been reported, but just to cover off in summary, we were already impacted through the loss of China group travel, which started in the second to last week of January. So, with that, all of our international-facing products, our hotels, our motels, our air-BMBs were immediately impacted by that because many of China group travel actually did stay in the Waikato. They were our fourth largest international visitor market.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 337.126,
+        "end": 366.691,
+        "text": "behind Australia, North America, and UK and Europe. It did shut us down pretty much once international travel restrictions hit us, and the visitor economy covers more than just the tourism operators. Again, we've mentioned accommodation, it also impacts retail, hospitality, transport providers, our operators of course, but also event organisers and major venues, and of course Mystery Creek of Aunty Drone and Lake Harapetal are key event platforms for Waiipā district.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 366.843,
+        "end": 385.861,
+        "text": "We have had significant job losses and business closures across tourism. I have down underneath that last bullet point, look the immediate business impact that we have been coaching our businesses through and helping them get through. As some have gone to what we call temporary or seasonal closure, so again we have a lot of seasonality and tourism",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 385.861,
+        "end": 406.347,
+        "text": "many who would close for winter have closed but those that potentially have never closed before we've suggested they go into hibernation and so that's what we're calling temporary seasonal closures. We've had a number of businesses you know Hobbiton was obviously one of the most public ones reported in the media but again all our motels, hotels, retail, hospitality",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 406.347,
+        "end": 431.339,
+        "text": "rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi i rungi",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 431.339,
+        "end": 453.023,
+        "text": "betu pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei.",
+        "speaker": "SPEAKER_02",
+        "words": []
+      },
+      {
+        "start": 453.918,
+        "end": 482.183,
+        "text": "Yeah, so particularly for Waipa, it has mainly been your hospitality, potentially some of your retail and also accommodation. So we've had many, nearly all of your accommodation has pretty much gone into hibernation or closure. They're calling it temporary closure, but some of them have been able to access the wage subsidy, which is great. But again, what we're going to see is the impacts are longer than the 12-week wage subsidy right now. So it's post 12 weeks is what we're quite concerned about.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 482.183,
+        "end": 510.719,
+        "text": "We have been lobbying nationally the government and I think that's all sectors, not just tourism around potentially extending the wage subsidy for 20 weeks because it will take a lot to restart the tourism sector again. People's propensity to travel is quite low. We will travel locally and potentially we will travel intra regionally, sustain within the region, but to try and stand up the domestic travel market is going to be a long haul that we're looking at a 6 to 12 months recovery plan for that.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 513.453,
+        "end": 529.113,
+        "text": "Great. So, lastly, look, I mean, no surprise here, this was just something we do for industries. People know where we all fit. So, from the tourism perspective when we respond, obviously, we're providing industry support right now at a national level, regional level, and also",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 529.113,
+        "end": 555.927,
+        "text": "at a local level but then we have to waka our chambers of commerce our business associations and all local government have been great and actually supporting us with what we call the business and community support side for tourism businesses and then lastly we're obviously partnered with the civil defence network around providing welfare support not just for tourism operators again it's also been utilising tourism operators many of our caterers have now been repurposed into providing",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 555.927,
+        "end": 585.644,
+        "text": "food services pretty much or supporting the food banks and actually cooking meals. We also have a number of our transport operators and tourism being basically requisitions now to provide transport options and actually getting people around such as essential workers and many of the staff potentially we've been redeploying into civil defence networks through providing security and welfare and call centre as well. So not only are we also working with civil defence we're also putting staff into there as well.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 596.748,
+        "end": 603.92,
+        "text": "Even though we're obviously dealing with COVID, is it just for you to be aware there are obviously continuing issues that were going on with—",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 604.274,
+        "end": 628.945,
+        "text": "with COVID and with the tourism industry. First up was domestic airline connectivity. So look, Air New Zealand has been pretty open that they will not be restarting until alert level one. So we meet with Air New Zealand weekly just to see how we will try and stand the industry back up again. But they're going to focus very much on what we call an incremental restart. So that's doing a width and breadth strategy across the country. So potentially maybe only two or three flights into Hamilton.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 628.945,
+        "end": 650.377,
+        "text": "per day, beth agai, nis to try and get that reach across the whole network first before they can actually stand up and have a full schedule like we have seen out of Hamilton Airport, particularly over the last three to four years. Airline connectivity internationally is still continuing, so those are just a summary of some of the ones that are still flying. So, looking at New Zealand, are still connecting into North America and Hong Kong.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 650.697,
+        "end": 667.589,
+        "text": "into Australia. Fiji airlines are still flying into Fiji on a daily service and Qatar has probably used the most to try and repatriate Northern Hemisphere travellers back to their homes through Qatar and then also Korean Airlines are still operating a daily service as well.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 667.589,
+        "end": 691.94,
+        "text": "Aungaiai, te rei, New Zealand iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 691.94,
+        "end": 713.793,
+        "text": "Ngai rai iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 714.113,
+        "end": 740.742,
+        "text": "Air Traffic Control services up for review. The reason why I just put that in there is just to let everyone know there was no Waikato airports or airfields, but particularly Hamilton Airport isn't impacted. But for us in the central North Island, Rotorua is one that is going to be impacted around potentially the closure of air traffic control tower services. That will mean potentially that we will be re-diverting the domestic network through Tauranga and Hamilton. So, unfortunately for Rotorua's last, it could be our gain.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 741.535,
+        "end": 764.232,
+        "text": "We've still got the investigation under way around Fakati, White Island, so the work-safe investigation should be coming to a close shortly. There will be impacts on the tourism and suppliers around adventure tourism for this country, and also we will be up-weighting Qualmark, which is our accreditation programme, particularly around health and safety for the country.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 767.675,
+        "end": 794.371,
+        "text": "Ia pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei pakei",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 794.371,
+        "end": 818.941,
+        "text": "We worked due to hosting New Zealand Tourism Awards in November that has been postponed until next year, so we will reset the date for that. Exploring trends, these are what we call our two main international trade shows. They've obviously been delayed. Trends 2021, which is the main time when we actually sell the Waikato to the world. We will not be having until maybe June next year, so we're still waiting on a date for that.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 818.941,
+        "end": 843.46,
+        "text": "Te Pai i Pai i Christchurch, te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo i te reo",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 843.46,
+        "end": 856.252,
+        "text": "means that places like Croadlands and the Mystery Creek Event Centre are going to be filling the gap for national and international conferences for the short term, which is actually a good opportunity for us again as a region post COVID.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 857.264,
+        "end": 878.695,
+        "text": "We also do still have events planned so the major events obviously the National Waka Amas at this stage still plan to take effect in Lake Karapero and we also have our first major event for the region the ICC Women's Cricket World Cup scheduled for the 8th of February again. This one will particularly be",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 878.695,
+        "end": 893.191,
+        "text": "Decided by around October, November, whether international travel restrictions have lifted to enable some of the players to come. Otherwise, they will have to go into, if it does continue, into isolation until the cricket World Cup can be held.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 893.832,
+        "end": 923.431,
+        "text": "Ngai iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi iwi",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 923.752,
+        "end": 942.314,
+        "text": "We have a three-tiered response plan. Obviously this is no similar to everyone else right now. We have a mitigate process which we're currently in now. We then have a restart phase and then we have a reimagine phase. So initially in the response phase, no different to everyone else. Lots of briefings.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 942.314,
+        "end": 969.989,
+        "text": "Lot of support, we're obviously having face-to-face briefings across all the sector long before the shutdown and now we've moved to the virtual space. We're still doing advocacy at a national level to try and make sure we can access more business support for the region. Some of the gap right now out of government support and out of the support that Tawaka can provide is it doesn't cover any employers for 100 employers plus. So that's quite the pointy end of town we call it for most of our region for our big employers.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 969.989,
+        "end": 992.551,
+        "text": "Again, wage subsidy okay, but outside of that there's actually no large industry support. So we've been pushing that through government to try and unlock some of that if this lockdown continues. We've been doing one-on-one operator check-ins. We have 240 listed operators with us. So again, these are daily to weekly check-ins by all our teams to make sure everyone's been able to access business advice and some of the wage support.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 992.551,
+        "end": 1018.69,
+        "text": "We've been doing webinars and we've now moved in the last two weeks into workforce redeployment. So again we've been taking some organisations or employers that have maybe at least five to ten staff members displaced through to Hobbiton who had one of the largest that around 270 and actually redeploying them and offering them redeployment options into the kiwi fruit industry. We placed 110 staff into kiwi fruit with transport from Hobbiton",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1019.078,
+        "end": 1041.488,
+        "text": "as well as the avocado industry, which will be the next seasonal workforce, will be standing up until the end of the year. We've put staff into supermarkets, civil defence, security, and also they've been providing some services from home. But again, what we are going to see over the next two weeks, and we're starting to measure that, is the full impacts of people that we cannot redeploy, that potentially will be out of work.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1042.349,
+        "end": 1071.83,
+        "text": "So, as there is currently a survey underway and will be updating all councils and the government around the overall impact for tourism of Waikato. Under the restart phase, so again we want to congratulate local government because obviously getting some of those shovel-roody projects through with the Crown infrastructure partners for their consideration is a great win for the region but potentially for the sector. Pretty much every district has put up around one to two tourism",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1071.83,
+        "end": 1096.72,
+        "text": "projekts iwi pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeiniai pakeiniai. Aotei, pakeiniai pakeiniai pakeinia",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1097.125,
+        "end": 1118.708,
+        "text": "We're also working on a major and business events restart campaign, so that planning has been underway for a couple of weeks, so that when we're ready to go, we can push go on that. We do see events and business events and corporate travel as being the kickstarter we need for economic and social recovery across the region. New developments, again, you've all got new developments going on potentially in your regions.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1119.316,
+        "end": 1140.443,
+        "text": "in lake, and obviously one of your newest hotels in Cambridge only opened on Christmas Eve, so Glenda and the team we've been keeping in touch with quite a lot because they haven't been in operation very long. Their impacts are quite severe, so again making sure that we still have some future developments that will continue across the region to take us through the next stage. Data and insights",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1140.443,
+        "end": 1156.913,
+        "text": "I've touched on, they've now gone to weekly so again we're sharing that information in Tuwaka and now we're contributing to the Tuwaka economic outlook as well which is great and then lastly the mighty local campaign was launched two weeks ago and it's definitely around the restart phase, things seem.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1161.082,
+        "end": 1177.4,
+        "text": "Maiti lokal, agin, bethau te waka o kaimiai, te iamutu kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai, kaimiai",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1177.4,
+        "end": 1206.745,
+        "text": "We're in phase one, so for the last two weeks we've been promoting businesses with contactless delivery, promoting people that are still doing entertainment online or virtually from within Waikato, recipes from our beloved chefs, wellbeing and fitness, and this week we launched business stories. So again we're starting to use this platform to promote some of the businesses and how they're pivoting into obviously response or looking at different opportunities for their business. So the idea is to try and give people hope during phase one.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1206.745,
+        "end": 1229.965,
+        "text": "during phase two, which is obviously from alert level three, we will increase our takeaway and Ethan B listings, and also essential services are starting to grow as well. In phase two, we will move more to a local phase at the moment it's a regional platform, but the idea is potentially people will be able to group the types of information and services available at a local community level and at a district level as well.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1230.961,
+        "end": 1258.973,
+        "text": "and then phase three, which is when hopefully all travel restrictions are lifted, we will then activate the basically the buy local, eat local, event local shop, visit and explore within the region. And obviously that's in partnership with many communities and business associations that already have local programs such as Cambridge with their totally locally Cambridge campaign. So we're working with Kelly and the team around how we try and push their program rather than this one once we get to phase three.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1261.201,
+        "end": 1290.209,
+        "text": "Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai. Paikai.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1290.209,
+        "end": 1302.882,
+        "text": "So, i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l i'l",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1303.743,
+        "end": 1331.536,
+        "text": "At level three, which is what we are planning our scenarios for six to twelve months, we can then stand up the domestic market. That is when potentially we will mainly focus on drive. So as you've heard me say before, 2.5 potentially three million people live within three hours radius of the Waikato region, including the region itself. So we'll definitely be focusing on the drive market. National events will be returning as well as national meetings and then eventually corporate travel, which again,",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1331.536,
+        "end": 1356.545,
+        "text": "business are quite a good lead for us with regards to standing up the sector again and then lastly we're planning on one to two years before we actually start to see any sort of international impact again. Short haul markets into Australia and the Pacific will open first and then we will eventually move back into major events international conferences and starting to bring back the corporate and leisure travel market into Waikato. So",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1356.832,
+        "end": 1367.227,
+        "text": "That's the time frame we are currently doing our scenario planning for, but as we all know it may change every week based on the alert levels we have.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1371.85,
+        "end": 1388.978,
+        "text": "Reimagin. We have been pushing for the last two to three months with Tourism New Zealand and the Minister for Tourism",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1388.978,
+        "end": 1411.152,
+        "text": "around what we're calling a reimagining of tourism. Now is our chance that this is more than a shock, it's actually a bit of a circuit breaker for the sector and for all business sectors for us all to look and see how could we do our businesses differently. We all knew that tourism was growing at quite an exponential rate and there were some areas that were really feeling the pressure such as Queenstown and Central Otago.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1411.557,
+        "end": 1428.871,
+        "text": "and Cathedral Cove, some of our sites in Mount Tongarero. So for us now it's great to see the government are taking this seriously so we're now working with tourism New Zealand to lead a new plan domestically and internationally but also look at all these types of questions you know we're our previous visitor arrivals and expenditure growth",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1428.871,
+        "end": 1453.407,
+        "text": "raita i raita, betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu betu",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1453.677,
+        "end": 1467.059,
+        "text": "and that they have the decision around what sort of tourism they want. So, again, we will be moving our 2016 Tourism Opportunities Plan, which many of you were involved in. We will now be developing a destination management plan and that will be happening nationally as well.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1467.532,
+        "end": 1492.912,
+        "text": "to try on what we call transform tourism for the better. So there is no such word as recovery now. We will not be receiving the same sorts of level of tourism as we did previously, but neither we might not have the same sort of services and opportunities available in tourism as well post COVID. So again, it is a good opportunity for us to look at transforming the sector. I think Sam, I think we've got one more.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1493.536,
+        "end": 1519.996,
+        "text": "Look, and lastly, just obviously, I call it to all my local government partners. I really appreciate everyone helping to promote your rates relief remissions and instalment policies, not just for the tourism sector, but for all business. It's great to see you're all continuing with your resource consent process, maybe in a more delayed way, but again, the liquor and food licensing is going to be more important for us, particularly when we try and stand up after Alert Level 3.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1519.996,
+        "end": 1542.018,
+        "text": "We still have the regional major event strategy activation, so again we are still awaiting a decision from Well Energy Trust about potentially helping to establish a regional major events fund, which will assist all the districts to be able to bid for major events again, and also to attract and bid new major events into our shoulder season across the region.",
+        "speaker": "SPEAKER_05",
+        "words": []
+      },
+      {
+        "start": 1542.018,
+        "end": 1560.04,
+        "text": "Ia pili, pili, pili, pili, pili, pili, pili",
+        "speaker": "SPEAKER_05",
+        "words": []
+      }
+    ]
+  },
+  "visual": {
+    "scenes": [
+      {
+        "scene_id": 0,
+        "start": 0.0,
+        "end": 94.467,
+        "keyframe_path": "outputs\\keyframes\\scene_000.jpg",
+        "keyframe_time": 47.233,
+        "ocr_lines": [
+          {
+            "text": "zoom",
+            "confidence": 0.9953059554100037,
+            "bbox": [
+              338.0,
+              206.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 1,
+        "start": 94.467,
+        "end": 141.033,
+        "keyframe_path": "outputs\\keyframes\\scene_001.jpg",
+        "keyframe_time": 117.75,
+        "ocr_lines": [
+          {
+            "text": "zoom",
+            "confidence": 0.9539231657981873,
+            "bbox": [
+              342.0,
+              206.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 2,
+        "start": 141.033,
+        "end": 167.067,
+        "keyframe_path": "outputs\\keyframes\\scene_002.jpg",
+        "keyframe_time": 154.05,
+        "ocr_lines": [
+          {
+            "text": "zoom",
+            "confidence": 0.9960805177688599,
+            "bbox": [
+              338.0,
+              204.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 3,
+        "start": 167.067,
+        "end": 171.133,
+        "keyframe_path": "outputs\\keyframes\\scene_003.jpg",
+        "keyframe_time": 169.1,
+        "ocr_lines": [
+          {
+            "text": "zoom",
+            "confidence": 0.9994804859161377,
+            "bbox": [
+              340.0,
+              206.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 4,
+        "start": 171.133,
+        "end": 175.4,
+        "keyframe_path": "outputs\\keyframes\\scene_004.jpg",
+        "keyframe_time": 173.267,
+        "ocr_lines": [
+          {
+            "text": "zoom",
+            "confidence": 0.9978967308998108,
+            "bbox": [
+              338.0,
+              206.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 5,
+        "start": 175.4,
+        "end": 193.1,
+        "keyframe_path": "outputs\\keyframes\\scene_005.jpg",
+        "keyframe_time": 184.25,
+        "ocr_lines": []
+      },
+      {
+        "scene_id": 6,
+        "start": 193.1,
+        "end": 197.133,
+        "keyframe_path": "outputs\\keyframes\\scene_006.jpg",
+        "keyframe_time": 195.117,
+        "ocr_lines": [
+          {
+            "text": "zoom",
+            "confidence": 0.9849275946617126,
+            "bbox": [
+              338.0,
+              206.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 7,
+        "start": 197.133,
+        "end": 199.967,
+        "keyframe_path": "outputs\\keyframes\\scene_007.jpg",
+        "keyframe_time": 198.55,
+        "ocr_lines": [
+          {
+            "text": "zoom",
+            "confidence": 0.9868623614311218,
+            "bbox": [
+              338.0,
+              206.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 8,
+        "start": 199.967,
+        "end": 202.533,
+        "keyframe_path": "outputs\\keyframes\\scene_008.jpg",
+        "keyframe_time": 201.25,
+        "ocr_lines": [
+          {
+            "text": "WAIPA DISTRICT COUNCIL",
+            "confidence": 0.777304243210959,
+            "bbox": [
+              65.0,
+              193.0,
+              205.0,
+              207.0
+            ]
+          },
+          {
+            "text": "m",
+            "confidence": 0.9958483246088043,
+            "bbox": [
+              385.0,
+              209.0,
+              409.0,
+              229.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 9,
+        "start": 202.533,
+        "end": 233.167,
+        "keyframe_path": "outputs\\keyframes\\scene_009.jpg",
+        "keyframe_time": 217.85,
+        "ocr_lines": [
+          {
+            "text": "zoom",
+            "confidence": 0.9665462970733643,
+            "bbox": [
+              340.0,
+              206.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 10,
+        "start": 233.167,
+        "end": 354.633,
+        "keyframe_path": "outputs\\keyframes\\scene_010.jpg",
+        "keyframe_time": 293.9,
+        "ocr_lines": [
+          {
+            "text": "Hamile",
+            "confidence": 0.40144131845816805,
+            "bbox": [
+              74.0,
+              54.0,
+              106.0,
+              60.0
+            ]
+          },
+          {
+            "text": "zoom",
+            "confidence": 0.9679567813873291,
+            "bbox": [
+              340.0,
+              206.0,
+              412.0,
+              230.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 11,
+        "start": 354.633,
+        "end": 918.433,
+        "keyframe_path": "outputs\\keyframes\\scene_011.jpg",
+        "keyframe_time": 636.533,
+        "ocr_lines": [
+          {
+            "text": "COVID-19",
+            "confidence": 0.8000991676834697,
+            "bbox": [
+              26.0,
+              22.0,
+              134.0,
+              46.0
+            ]
+          },
+          {
+            "text": "strategic issues",
+            "confidence": 0.9536245442168857,
+            "bbox": [
+              144.0,
+              22.0,
+              304.0,
+              52.0
+            ]
+          },
+          {
+            "text": "Domestic airline connectivity",
+            "confidence": 0.8519267033710696,
+            "bbox": [
+              39.0,
+              61.0,
+              183.0,
+              75.0
+            ]
+          },
+          {
+            "text": "International airline connectivity",
+            "confidence": 0.9301964596253938,
+            "bbox": [
+              39.0,
+              87.0,
+              199.0,
+              101.0
+            ]
+          },
+          {
+            "text": "FUTURF",
+            "confidence": 0.565266050902889,
+            "bbox": [
+              40.0,
+              118.0,
+              70.0,
+              126.0
+            ]
+          },
+          {
+            "text": "Air truffic control services review",
+            "confidence": 0.4982418847422363,
+            "bbox": [
+              39.0,
+              133.0,
+              199.0,
+              145.0
+            ]
+          },
+          {
+            "text": "Whakaari/White Island WorkSafe investigation",
+            "confidence": 0.8553489380984451,
+            "bbox": [
+              38.0,
+              158.0,
+              285.0,
+              173.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 12,
+        "start": 918.433,
+        "end": 1159.433,
+        "keyframe_path": "outputs\\keyframes\\scene_012.jpg",
+        "keyframe_time": 1038.933,
+        "ocr_lines": [
+          {
+            "text": "MITIGATE: Our response € action",
+            "confidence": 0.7950030084386278,
+            "bbox": [
+              32.0,
+              14.0,
+              354.0,
+              43.0
+            ]
+          },
+          {
+            "text": "Restart",
+            "confidence": 0.4645969965303377,
+            "bbox": [
+              125.0,
+              75.0,
+              167.0,
+              87.0
+            ]
+          },
+          {
+            "text": "Wcbinar",
+            "confidence": 0.40064513750734276,
+            "bbox": [
+              280.0,
+              142.0,
+              312.0,
+              150.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 13,
+        "start": 1159.433,
+        "end": 1263.967,
+        "keyframe_path": "outputs\\keyframes\\scene_013.jpg",
+        "keyframe_time": 1211.7,
+        "ocr_lines": [
+          {
+            "text": "RESTART: Our response € actions",
+            "confidence": 0.5456986901077839,
+            "bbox": [
+              22.0,
+              12.0,
+              352.0,
+              40.0
+            ]
+          },
+          {
+            "text": "Mighty",
+            "confidence": 0.9565786189953349,
+            "bbox": [
+              161.0,
+              65.0,
+              205.0,
+              81.0
+            ]
+          },
+          {
+            "text": "Lodal",
+            "confidence": 0.5253604155262367,
+            "bbox": [
+              163.0,
+              79.0,
+              199.0,
+              91.0
+            ]
+          },
+          {
+            "text": "h4i 2",
+            "confidence": 0.35548332174304687,
+            "bbox": [
+              32.0,
+              158.0,
+              60.0,
+              166.0
+            ]
+          },
+          {
+            "text": "nlont",
+            "confidence": 0.5011447952583579,
+            "bbox": [
+              224.0,
+              170.0,
+              248.0,
+              176.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 14,
+        "start": 1263.967,
+        "end": 1369.4,
+        "keyframe_path": "outputs\\keyframes\\scene_014.jpg",
+        "keyframe_time": 1316.683,
+        "ocr_lines": [
+          {
+            "text": "RESTART: Our response € actions",
+            "confidence": 0.8932244527981275,
+            "bbox": [
+              22.0,
+              12.0,
+              352.0,
+              40.0
+            ]
+          },
+          {
+            "text": "Hyper",
+            "confidence": 0.9995874615827538,
+            "bbox": [
+              28.0,
+              76.0,
+              88.0,
+              100.0
+            ]
+          },
+          {
+            "text": "Regional",
+            "confidence": 0.8144674538984074,
+            "bbox": [
+              104.0,
+              78.0,
+              182.0,
+              104.0
+            ]
+          },
+          {
+            "text": "Domestic",
+            "confidence": 0.9972688980326986,
+            "bbox": [
+              201.0,
+              83.0,
+              273.0,
+              101.0
+            ]
+          },
+          {
+            "text": "International",
+            "confidence": 0.686759049184009,
+            "bbox": [
+              294.0,
+              84.0,
+              394.0,
+              100.0
+            ]
+          },
+          {
+            "text": "Local",
+            "confidence": 0.9994605185412,
+            "bbox": [
+              35.0,
+              97.0,
+              85.0,
+              115.0
+            ]
+          },
+          {
+            "text": "Carporals",
+            "confidence": 0.32211293749533654,
+            "bbox": [
+              298.0,
+              176.0,
+              330.0,
+              184.0
+            ]
+          }
+        ]
+      },
+      {
+        "scene_id": 15,
+        "start": 1369.4,
+        "end": 1560.033,
+        "keyframe_path": "outputs\\keyframes\\scene_015.jpg",
+        "keyframe_time": 1464.717,
+        "ocr_lines": [
+          {
+            "text": "REIMAGINE: Our respense € action",
+            "confidence": 0.5397439693022263,
+            "bbox": [
+              26.0,
+              16.0,
+              352.0,
+              44.0
+            ]
+          },
+          {
+            "text": "suppont Govt ;",
+            "confidence": 0.4589856433016187,
+            "bbox": [
+              38.0,
+              54.0,
+              104.0,
+              62.0
+            ]
+          },
+          {
+            "text": "call to reshape and reimagine the tourism industry for the future",
+            "confidence": 0.8338268719155717,
+            "bbox": [
+              105.0,
+              51.0,
+              391.0,
+              65.0
+            ]
+          },
+          {
+            "text": "Dlrectly engaged wlth Tourism NZ, Reglona",
+            "confidence": 0.5407100657432347,
+            "bbox": [
+              37.0,
+              67.0,
+              227.0,
+              79.0
+            ]
+          },
+          {
+            "text": "ourism NZ, Alr NZ and MBIE",
+            "confidence": 0.6384998651216413,
+            "bbox": [
+              229.0,
+              67.0,
+              361.0,
+              79.0
+            ]
+          },
+          {
+            "text": "Develop the plan",
+            "confidence": 0.8240023071597624,
+            "bbox": [
+              37.0,
+              81.0,
+              115.0,
+              93.0
+            ]
+          },
+          {
+            "text": "together with Tourism New Zealand",
+            "confidence": 0.9426801399885815,
+            "bbox": [
+              113.0,
+              81.0,
+              273.0,
+              95.0
+            ]
+          },
+          {
+            "text": "Icak M",
+            "confidence": 0.4548823952222219,
+            "bbox": [
+              122.0,
+              122.0,
+              152.0,
+              130.0
+            ]
+          },
+          {
+            "text": "Transforming tourism",
+            "confidence": 0.9895278593598464,
+            "bbox": [
+              36.0,
+              157.0,
+              133.0,
+              171.0
+            ]
+          },
+          {
+            "text": "2016 Tourism Opportunilies Plan",
+            "confidence": 0.6133431937369324,
+            "bbox": [
+              139.0,
+              159.0,
+              261.0,
+              171.0
+            ]
+          },
+          {
+            "text": "Management Flan",
+            "confidence": 0.536098041344914,
+            "bbox": [
+              315.0,
+              159.0,
+              383.0,
+              171.0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "intelligence": {
+    "language": "en",
+    "summary": "The meeting focused on the impact of COVID-19 on the tourism sector, discussing job losses, business closures, and recovery plans. Key decisions included postponing the New Zealand Tourism Awards and launching the 'Mighty Local' campaign. Action items involved correcting meeting minutes, lobbying for wage subsidy extensions, and updating councils on survey results. Plans were made for a three-tiered response to tourism recovery and collaboration with Tourism New Zealand on a new tourism plan.",
+    "participants": [
+      "SPEAKER_00",
+      "SPEAKER_01",
+      "SPEAKER_02",
+      "SPEAKER_05"
+    ],
+    "topics": [
+      {
+        "text": "Impact of COVID-19 on tourism sector",
+        "evidence": [
+          {
+            "timestamp": 145.0,
+            "speaker": null,
+            "scene_id": null,
+            "quote": "Jason provides an update on the tourism sector, focusing on the impact of COVID-19 on Waipa District's tourism growth and visitor expenditure."
+          }
+        ]
+      },
+      {
+        "text": "Air New Zealand's restart plan and international connectivity",
+        "evidence": [
+          {
+            "timestamp": 596.0,
+            "speaker": null,
+            "scene_id": 11,
+            "quote": "Air New Zealand's incremental restart plan and ongoing international airline connectivity."
+          }
+        ]
+      },
+      {
+        "text": "Collaboration with Tourism New Zealand",
+        "evidence": [
+          {
+            "timestamp": 1411.0,
+            "speaker": "SPEAKER_05",
+            "scene_id": null,
+            "quote": "Discussed collaboration with Tourism New Zealand to develop a new tourism plan both domestically and internationally."
+          }
+        ]
+      }
+    ],
+    "action_items": [
+      {
+        "text": "Correct the minutes from the 18 February meeting to include Andrew Graham's attendance.",
+        "evidence": [
+          {
+            "timestamp": 85.0,
+            "speaker": null,
+            "scene_id": null,
+            "quote": "Correct the minutes from the 18 February meeting to include Andrew Graham's attendance."
+          }
+        ],
+        "owner": null,
+        "due": null
+      },
+      {
+        "text": "Lobby for an extension of the wage subsidy to 20 weeks.",
+        "evidence": [
+          {
+            "timestamp": 482.0,
+            "speaker": null,
+            "scene_id": null,
+            "quote": "Lobbying for an extension of the wage subsidy to 20 weeks to support the tourism sector's recovery."
+          }
+        ],
+        "owner": null,
+        "due": null
+      },
+      {
+        "text": "Postpone the New Zealand Tourism Awards until next year.",
+        "evidence": [
+          {
+            "timestamp": 794.0,
+            "speaker": null,
+            "scene_id": null,
+            "quote": "Postpone the New Zealand Tourism Awards until next year."
+          }
+        ],
+        "owner": null,
+        "due": null
+      },
+      {
+        "text": "Continue advocacy for more business support for large employers in the tourism sector.",
+        "evidence": [
+          {
+            "timestamp": 969.0,
+            "speaker": null,
+            "scene_id": null,
+            "quote": "Continue advocacy for more business support for large employers in the tourism sector."
+          }
+        ],
+        "owner": null,
+        "due": null
+      },
+      {
+        "text": "Update councils and government on the tourism impact survey results.",
+        "evidence": [
+          {
+            "timestamp": 1042.0,
+            "speaker": null,
+            "scene_id": null,
+            "quote": "Update councils and government on the tourism impact survey results."
+          }
+        ],
+        "owner": null,
+        "due": null
+      },
+      {
+        "text": "Launch the 'Mighty Local' campaign to support local businesses and promote regional tourism.",
+        "evidence": [
+          {
+            "timestamp": 1159.0,
+            "speaker": null,
+            "scene_id": null,
+            "quote": "Launch the 'Mighty Local' campaign to support local businesses and promote regional tourism."
+          }
+        ],
+        "owner": null,
+        "due": null
+      }
+    ],
+    "decisions": [
+      {
+        "text": "Motion carried with no contrary votes. No disclosures of members' interests or late items. Confirmation of meeting order with no changes.",
+        "evidence": [
+          {
+            "timestamp": 29.0,
+            "speaker": null,
+            "scene_id": null,
+            "quote": "Motion carried with no contrary votes. No disclosures of members' interests or late items. Confirmation of meeting order with no changes."
+          }
+        ]
+      }
+    ]
+  }
+}

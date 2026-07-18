@@ -1,0 +1,32 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+
+# Data & large artifacts (keep result.json; ignore heavy intermediates)
+data/input/*
+!data/input/.gitkeep
+outputs/cache/
+outputs/keyframes/
+*.wav
+*.mp4
+*.mkv
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Claude Code local settings
+.claude/settings.local.json

@@ -1,0 +1,10 @@
+{
+  "_comment": "Bootstrap reference over the first ~60 s of the clip. These labels were derived from the pipeline output itself (rather than an independent human listen), so reported WER/speaker-accuracy on this reference are optimistic anchors that exercise the harness. See docs/report.md for the honest analysis.",
+  "transcript": "meeting open welcome everybody so we'll start with the apologies and i guess we have hazel everyone else seems to be here so could i have a mover please andrew just before you do i have to leave the meeting at 1 30 to attend a future proof meeting so my apologies from then good as gold thanks jim so we include that in the motion as well if someone would like to move please thanks lou thanks susan all in favour aye contrary no it's carried disclosure of members interests do we have any today no i'll move on to item four late items any late items no late items so confirmation of order of meeting",
+  "speaker_segments": [
+    { "start": 0.0,  "end": 12.5, "speaker": "chair" },
+    { "start": 12.5, "end": 23.5, "speaker": "andrew" },
+    { "start": 23.5, "end": 60.0, "speaker": "chair" }
+  ],
+  "ocr_keywords": ["zoom"]
+}

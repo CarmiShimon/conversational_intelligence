@@ -1,0 +1,36 @@
+# Multimodal Meeting Intelligence Pipeline -- configuration.
+# Secrets (OPENAI_API_KEY, HUGGINGFACE_TOKEN) are NOT here; set them in .env
+# or the environment. Any value below can be overridden.
+
+speech:
+  # Reference GPU is a 4 GB T1200 -> "small" is a safe default. Use
+  # "medium"/"large-v3" on bigger GPUs for better accuracy.
+  whisper_model: small
+  compute_type: float16      # falls back to int8 automatically on OOM/CPU
+  device: cuda               # falls back to cpu if CUDA is unavailable
+  batch_size: 8
+  language: null             # null = auto-detect (may be non-English)
+  min_speakers: null
+  max_speakers: null
+
+vision:
+  scene_threshold: 27.0      # PySceneDetect content detector sensitivity
+  min_scene_len_sec: 2.0
+  ocr_engine: easyocr        # easyocr | paddleocr | tesseract
+  ocr_languages: ["en"]
+  ocr_min_confidence: 0.3
+  max_scenes: 200
+
+intelligence:
+  model: gpt-4o             # stronger reasoning + native vision; gpt-4o-mini is cheaper/faster
+  temperature: 0.0
+  max_window_chars: 24000    # above this -> map-reduce over chunks
+  request_timeout: 120
+  include_keyframes: true    # attach scene keyframe images so the LLM can read slides directly
+  max_keyframe_images: 40    # cost/latency cap; images are evenly sampled if there are more scenes
+
+paths:
+  input_dir: data/input
+  output_dir: outputs
+  cache_dir: outputs/cache
+  keyframe_dir: outputs/keyframes

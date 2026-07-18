@@ -1,0 +1,29 @@
+# --- Core / orchestration -------------------------------------------------
+setuptools<81            # provides pkg_resources (required by ctranslate2)
+pydantic==2.9.2
+pyyaml==6.0.2
+python-dotenv==1.0.1
+gdown==5.2.0
+numpy==1.26.4
+
+# --- Part A: Speech (ASR + alignment + diarization) -----------------------
+# NOTE: install torch/torchaudio FIRST with the matching CUDA wheel, e.g.
+#   pip install torch==2.3.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu121
+# whisperx pulls in faster-whisper, ctranslate2, transformers and pyannote.audio.
+whisperx==3.3.1
+# transformers must match torch 2.3.x (newer versions require torch >= 2.4).
+transformers==4.44.2
+# speechbrain 1.1 breaks pyannote diarization via a k2_fsa lazy-import bug.
+speechbrain==1.0.2
+
+# --- Part B: Computer Vision (scene detection + OCR) ----------------------
+scenedetect[opencv]==0.6.4
+opencv-python-headless==4.10.0.84
+easyocr==1.7.2
+
+# --- Part C: NLP / LLM ----------------------------------------------------
+openai==1.51.2
+httpx==0.27.2            # openai 1.51 is incompatible with httpx >= 0.28
+
+# --- Part D: Evaluation ---------------------------------------------------
+jiwer==3.0.4

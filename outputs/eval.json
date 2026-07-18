@@ -1,0 +1,41 @@
+{
+  "asr": {
+    "wer": 0.0667,
+    "substitutions": 0,
+    "deletions": 0,
+    "insertions": 8,
+    "ref_words": 120,
+    "hyp_words": 128,
+    "ref_window": [
+      0.0,
+      60.0
+    ]
+  },
+  "speaker": {
+    "accuracy": 1.0,
+    "label_mapping": {
+      "SPEAKER_01": "chair",
+      "SPEAKER_03": "andrew"
+    },
+    "ref_speakers": [
+      "andrew",
+      "chair"
+    ],
+    "hyp_speakers": [
+      "SPEAKER_01",
+      "SPEAKER_03"
+    ]
+  },
+  "ocr": {
+    "keyword_recall": 1.0,
+    "found": [
+      "zoom"
+    ],
+    "missing": [],
+    "scenes_with_text": 15,
+    "total_scenes": 16
+  },
+  "llm": {
+    "note": "LLM stage was skipped"
+  }
+}

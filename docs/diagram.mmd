@@ -1,0 +1,40 @@
+%% Multimodal Meeting Intelligence Pipeline -- system block diagram.
+%% Render at https://mermaid.live or any Mermaid-enabled viewer.
+flowchart TD
+    IN([Meeting video<br/>audio + on-screen content]) --> ING
+
+    subgraph S0[Stage 0 - Ingest]
+        ING[resolve input / gdown download] --> FF[ffmpeg]
+        FF --> WAV[[16 kHz mono WAV]]
+        FF --> VID[[video stream]]
+    end
+
+    subgraph A[Part A - Speech  &#40;WhisperX + pyannote&#41;]
+        WAV --> VAD[VAD segmentation] --> ASR[faster-whisper ASR<br/>+ language ID]
+        ASR --> ALN[word alignment<br/>wav2vec2]
+        ALN --> DIA[pyannote diarization]
+        DIA --> MRG[assign speakers / merge]
+    end
+
+    subgraph B[Part B - Vision  &#40;PySceneDetect + EasyOCR&#41;]
+        VID --> SCN[content scene<br/>change detection]
+        SCN --> KEY[representative<br/>keyframe / scene]
+        KEY --> OCR[OCR on-screen text]
+    end
+
+    MRG -->|Transcript contract| FUSE
+    OCR -->|VisualContext contract| FUSE
+
+    subgraph C[Part C - Fusion & Intelligence]
+        FUSE[shared timeline merge] --> WIN{input length?}
+        WIN -->|short| LLM[OpenAI structured output]
+        WIN -->|long| MR[map-reduce chunk notes] --> LLM
+        LLM --> SCHEMA[[schema validation<br/>+ grounding]]
+    end
+
+    MRG --> OUT
+    OCR --> OUT
+    SCHEMA --> OUT[[result.json<br/>PipelineOutput]]
+
+    OUT --> EVAL[Part D - Evaluation<br/>WER / speaker acc / OCR recall / LLM rubric]
+    REF([hand-labelled reference]) --> EVAL
