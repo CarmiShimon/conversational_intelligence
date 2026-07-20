@@ -1,5 +1,7 @@
 # Multimodal Meeting Intelligence Pipeline
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CarmiShimon/conversational_intelligence/blob/master/notebooks/run_in_colab.ipynb)
+
 An end-to-end pipeline that ingests a recorded meeting video and produces a
 single, structured, **speaker-attributed, visually-grounded, LLM-enriched**
 output. It is a cascade of independent, swappable stages with explicit data
@@ -18,6 +20,14 @@ video ─▶ ingest ─▶ [A] speech ─┐
 | C. Fusion | [`fusion.py`](src/mmi/fusion.py) | Merge A + B onto one timeline | — |
 | C. Intelligence | [`intelligence.py`](src/mmi/intelligence.py) | Structured summary / topics / action items / decisions, grounded in evidence | OpenAI (gpt-4o, vision-capable) |
 | D. Evaluation | [`evaluate.py`](src/mmi/evaluate.py) | WER, speaker accuracy, OCR recall, LLM rubric | jiwer + optional LLM judge |
+
+## Quickest way to try it: Google Colab
+
+Click the **Open in Colab** badge above, or open
+[`notebooks/run_in_colab.ipynb`](notebooks/run_in_colab.ipynb) directly. It
+clones this repo, installs everything in the right order, prompts for your
+OpenAI/Hugging Face secrets, and runs end-to-end on a free GPU runtime — no
+local setup required. Everything below is for running it locally.
 
 ## Requirements
 
