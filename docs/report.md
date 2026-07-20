@@ -8,9 +8,10 @@ Each stage reads a typed object and emits a typed object, so any component can b
 replaced (a different ASR, a hosted OCR, another LLM) without touching its
 neighbours — the same shape a production speech/AI stack takes.
 
-![Pipeline architecture](diagram.png)
-
-(Mermaid source: [`docs/diagram.mmd`](diagram.mmd).)
+See the system block diagram in a separate document:
+[`docs/diagram.png`](diagram.png) (rendered) /
+[`docs/diagram.mmd`](diagram.mmd) (Mermaid source) — it shows every stage,
+the data contract flowing between them, and which model/API sits where.
 
 **Data contracts (the important part).** The brief explicitly asks us to design
 the contract between stages, so this is where most of the design effort went:
